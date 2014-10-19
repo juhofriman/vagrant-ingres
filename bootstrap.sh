@@ -29,7 +29,7 @@ chown vagrant:vagrant /home/vagrant/.ingIIbash
 echo "source .ingIIbash" >> /home/vagrant/.bash_profile
 echo "source .ingIIbash" >> /home/ingres/.bash_profile
 
-mkdir /home/ingres/spec
+[ ! -d /home/ingres/spec ] && mkdir /home/ingres/spec
 cp /vagrant/spec/vagrant-user-spec.sql /home/ingres/spec/vagrant-user-spec.sql
 
 # This should be done to every sql-file in spec
