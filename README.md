@@ -36,7 +36,6 @@ Ideas and pull requests welcome.
 You can configure system by becoming ingres user.
 
 ```
--bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
 [vagrant@localhost ~]$ sudo su -
 [root@localhost ~]# su - ingres
 [ingres@localhost ~]$ ls -la /opt/Ingres/IngresII/ingres/
