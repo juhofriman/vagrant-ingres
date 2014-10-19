@@ -24,7 +24,8 @@ if [ $? == 6 ]
 	echo "Box had ingres installed already, that is ok"
 fi
 
-echo "Setting up ingres environment for user vagrant"
+echo "Setting up ingres environment for user vagrant and for user ingres as well"
 cp /home/ingres/.ingIIbash /home/vagrant/.ingIIbash
 chown vagrant:vagrant /home/vagrant/.ingIIbash
 echo "source .ingIIbash" >> /home/vagrant/.bash_profile
+echo "source .ingIIbash" >> /home/ingres/.bash_profile
