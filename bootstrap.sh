@@ -11,7 +11,13 @@ echo "Unpacking $INGRES_PACKAGE"
 
 tar -xf $INGRES_PACKAGE
 
-groupadd ww_eng
+if grep -q ww_eng /etc/group
+then
+   echo "group ww_eng exists..."
+else
+   echo "group ww_eng does not exist, Creating..."
+   groupadd ww_eng
+fi
 
 echo "Installing ingres express and wait until it is running..."
 cd ingres*
