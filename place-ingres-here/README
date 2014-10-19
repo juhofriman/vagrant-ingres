@@ -1,1 +1,3 @@
-Place ingres tar.gz here
+Place ingres*.tgz here
+
+This Vagrantfile is tested with ingres-10.1.0-125-gpl-linux-x86_64.tgz. Other versions might work.
