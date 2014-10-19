@@ -18,7 +18,6 @@ vagrant ssh
 ```
 Host:vagrant-ingres juho$ vagrant ssh
 Last login: Sun Oct 19 12:08:39 2014 from 10.0.2.2
--bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
 [vagrant@localhost ~]$ 
 [vagrant@localhost ~]$ createdb foo
 ...
