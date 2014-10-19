@@ -1,0 +1,1 @@
+Add folder here under databases with ingres database dump and it will be automagically created. Folder name is used as a database name.

@@ -34,11 +34,28 @@ cp /home/ingres/.ingIIbash /home/vagrant/.ingIIbash
 chown vagrant:vagrant /home/vagrant/.ingIIbash
 echo "source .ingIIbash" >> /home/vagrant/.bash_profile
 echo "source .ingIIbash" >> /home/ingres/.bash_profile
+source .ingIIbash
 
 [ ! -d /home/ingres/spec ] && mkdir /home/ingres/spec
 cp /vagrant/spec/vagrant-user-spec.sql /home/ingres/spec/vagrant-user-spec.sql
 
 # This should be done to every sql-file in spec
 su - ingres -c "sql iidbdb < /home/ingres/spec/vagrant-user-spec.sql"
+
+cd /vagrant/database-auto-create/databases
+for i in $(ls -d */)
+  do 
+    DB_NAME=${i%%/}
+    createdb -uvagrant $DB_NAME
+    if [ $? != 0 ]
+       then
+          echo "database $DB_NAME already exists in box. Skipping."
+       else
+          echo "Database $DB_NAME created."
+          cd $DB_NAME
+          sql $DB_NAME < copy.in
+          cd ..
+    fi
+done
 
 echo "Yeow!! vagrant ssh and start ingresing! See password from spec/vagrant-user-spec.sql. It is likely that it is NOPASSWORD"

@@ -1,3 +1,4 @@
 .vagrant
 place-ingres-here/*tgz
 place-ingres-here/ingres*
+database-auto-create/databases
