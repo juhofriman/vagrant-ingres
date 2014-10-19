@@ -35,4 +35,4 @@ cp /vagrant/spec/vagrant-user-spec.sql /home/ingres/spec/vagrant-user-spec.sql
 # This should be done to every sql-file in spec
 su - ingres -c "sql iidbdb < /home/ingres/spec/vagrant-user-spec.sql"
 
-echo "Yeow!! vagrant ssh and start ingresing! See password from spec/vagrant-user-spec.sql"
+echo "Yeow!! vagrant ssh and start ingresing! See password from spec/vagrant-user-spec.sql. It is likely that it is NOPASSWORD"
